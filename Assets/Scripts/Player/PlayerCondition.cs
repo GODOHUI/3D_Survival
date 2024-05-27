@@ -58,6 +58,7 @@ public class PlayerCondition : MonoBehaviour , IDamagable // 업데이트 반환
     {
 
         health.Subtract(damage);
+        onTakeDamage?.Invoke();
 
     }
 }
