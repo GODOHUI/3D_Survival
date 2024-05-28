@@ -32,7 +32,7 @@ public class UIInventory : MonoBehaviour
 
 
     ItemData selecteditem;
-    int selecteditemidx;
+    //int selecteditemidx;
 
     // Start is called before the first frame update
     void Start()
@@ -230,8 +230,8 @@ public class UIInventory : MonoBehaviour
             //}
 
             selectedItem.item = null;
-            slots[selecteditemidx].item= null;
-            selecteditemidx = -1;
+            slots[selectedItemIndex].item= null;
+            selectedItemIndex = -1;
             ClearSelectedItemWindow();
         }
 
