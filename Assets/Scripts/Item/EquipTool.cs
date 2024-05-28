@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipTool : MonoBehaviour
+public class EquipTool : Equip
 {
     public float attackRate;  //공격주기 
     private bool attacking; //
