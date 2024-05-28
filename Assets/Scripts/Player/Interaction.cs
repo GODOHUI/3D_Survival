@@ -54,7 +54,7 @@ public class Interaction : MonoBehaviour
     }
     private void SetPromptText()
     {
-        promptText.gameObject.SetActive(true); 
+        promptText.gameObject.SetActive(true);
         promptText.text = curInteractable.GetInteractPrompt();   //인터페이스 기능을 가지고온다 
     }
 

@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Item_Carrot
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   displayName: "\uB2F9\uADFC"
-  description: "\uBA39\uC73C\uBA74\uCCB4\uB825\uC774 \uD68C\uBCF5\uD55C\uB2E4"
-  type: 0
+  description: "\uCCB4\uB825\uD68C\uBCF5"
+  type: 2
   icon: {fileID: 21300000, guid: b53822ec75d701e49b9947d1d09fd81e, type: 3}
   dropPrefab: {fileID: 8678044435314347506, guid: 4d683faae079b5946b79f9d386a6f77c, type: 3}
   canStack: 1
   maxStackAmount: 12
-  consumables: []
+  consumables:
+  - type: 1
+    value: 10
+  - type: 0
+    value: 20
   equipPrefab: {fileID: 0}

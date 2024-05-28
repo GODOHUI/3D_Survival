@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,8 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canLook = true;
+    public Action inventory;
 
- 
  
 
     private void Awake()
@@ -33,7 +34,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+     
         Cursor.lockState = CursorLockMode.Locked;  // 커서를 보이게 하고싶지 않다 
+      
     }
     private void FixedUpdate()
     {
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (canLook)
+        if (canLook)  //true일때만 카메라가 돌아간다
         {
             CameraLook();
         }
@@ -118,6 +121,23 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)  //tab키를 누르면 함수 호출
+        {
+            inventory?.Invoke();  
+            ToggleCursor();
+        }
+    }
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;  //인벤토리가 안열려져있고 화면이 움직이는상태
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked; //락이 되어있으면 none
+        canLook = !toggle;  
+    }
+
 }
 
 

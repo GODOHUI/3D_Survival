@@ -17,7 +17,7 @@ public class ItemObject : MonoBehaviour, IInteractable
     public string GetInteractPrompt()
     {
         string str = $"{data.displayName}\n{data.description}";   //이름과 설명 반환
-        return "";
+        return str;
 
     }
 
